@@ -43,6 +43,7 @@
                 Console.WriteLine("\nWell-Come To PRODUCT MANEGMENT REVIEW Using LINQ\n");
                 Console.WriteLine("1 : Add List");
                 Console.WriteLine("2 : Display List");
+                Console.WriteLine("3 : Retrive Top 3 From List");
                 Console.WriteLine("0 : Exit\n");
                 Console.Write("\nEnter Option : ");
                 int opt = Convert.ToInt32(Console.ReadLine());
@@ -54,6 +55,9 @@
                     case 2:
                         management.DisplayProductReviewList(productList);
 
+                        break;
+                    case 3:
+                        management.RetriveTop3Records();
                         break;
                     case 0:
                         flag= false;

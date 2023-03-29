@@ -24,7 +24,11 @@ namespace ProductReviewManagementUsingLINQ
             }
         }
 
-
+        public void RetriveTop3Records()
+        {
+            var result = this.productReviewModels.OrderByDescending(p => p.Rating).Take(3);
+            DisplayProductReviewList(result.ToList());
+        }
 
 
     }
