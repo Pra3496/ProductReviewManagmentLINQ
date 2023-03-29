@@ -71,6 +71,11 @@
                         Console.Write("\nPress any key...");
                         Console.ReadKey();
                         break;
+                    case 5:
+                        management.CountOfReview(productList);
+                        Console.Write("\nPress any key...");
+                        Console.ReadKey();
+                        break;
                     case 0:
                         flag= false;
                         break;
