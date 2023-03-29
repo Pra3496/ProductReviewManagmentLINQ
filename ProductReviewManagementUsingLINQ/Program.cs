@@ -45,6 +45,8 @@
                 Console.WriteLine("2 : Display List");
                 Console.WriteLine("3 : Retrive Top 3 From List");
                 Console.WriteLine("4 : Retrive Product Rating greater then 3");
+                Console.WriteLine("5 : Retrive Product ID Count");
+                Console.WriteLine("6 : Retrive Only ProductID");
                 Console.WriteLine("0 : Exit\n");
                 Console.Write("\nEnter Option : ");
                 int opt = Convert.ToInt32(Console.ReadLine());
@@ -73,6 +75,11 @@
                         break;
                     case 5:
                         management.CountOfReview(productList);
+                        Console.Write("\nPress any key...");
+                        Console.ReadKey();
+                        break;
+                    case 6:
+                        management.RetrivOnlyProductIdAndReview(productList);
                         Console.Write("\nPress any key...");
                         Console.ReadKey();
                         break;
