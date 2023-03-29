@@ -44,24 +44,37 @@
                 Console.WriteLine("1 : Add List");
                 Console.WriteLine("2 : Display List");
                 Console.WriteLine("3 : Retrive Top 3 From List");
+                Console.WriteLine("4 : Retrive Product Rating greater then 3");
                 Console.WriteLine("0 : Exit\n");
                 Console.Write("\nEnter Option : ");
                 int opt = Convert.ToInt32(Console.ReadLine());
                 switch(opt)
                 {
+
                     case 1:
                         management.AddProductReview(productList);
+                        Console.Write("\nPress any key...");
+                        Console.ReadKey();
                         break;
                     case 2:
                         management.DisplayProductReviewList(productList);
-
+                        Console.Write("\nPress any key...");
+                        Console.ReadKey();
                         break;
                     case 3:
                         management.RetriveTop3Records();
+                        Console.Write("\nPress any key...");
+                        Console.ReadKey();
+                        break;
+                    case 4:
+                        management.RetriveProductRatingGreaterThen3(productList);
+                        Console.Write("\nPress any key...");
+                        Console.ReadKey();
                         break;
                     case 0:
                         flag= false;
                         break;
+
                 }
             }
            

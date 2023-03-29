@@ -30,6 +30,12 @@ namespace ProductReviewManagementUsingLINQ
             DisplayProductReviewList(result.ToList());
         }
 
+        public void RetriveProductRatingGreaterThen3(List<ProductReviewModel> productReviewModels )
+        {
+            var result = productReviewModels.Where(p => p.Rating > 3 && (p.ProductId == 1 || p.ProductId == 4 || p.ProductId == 9));
+            DisplayProductReviewList(result.ToList());
+        }
+
 
     }
 }
