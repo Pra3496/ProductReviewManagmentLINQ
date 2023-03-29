@@ -40,6 +40,7 @@
             bool flag = true;
             while(flag)
             {
+                Console.Clear();
                 Console.WriteLine("\nWell-Come To PRODUCT MANEGMENT REVIEW Using LINQ\n");
                 Console.WriteLine("1 : Add List");
                 Console.WriteLine("2 : Display List");
@@ -80,6 +81,11 @@
                         break;
                     case 6:
                         management.RetrivOnlyProductIdAndReview(productList);
+                        Console.Write("\nPress any key...");
+                        Console.ReadKey();
+                        break;
+                    case 7:
+                        management.SkipTop5RecordsFromProductList(productList);
                         Console.Write("\nPress any key...");
                         Console.ReadKey();
                         break;
