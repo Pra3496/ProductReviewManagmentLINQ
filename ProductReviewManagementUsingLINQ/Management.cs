@@ -80,6 +80,15 @@ namespace ProductReviewManagementUsingLINQ
             }
         }
 
-        
+        public void AverageRatingProduct(List<ProductReviewModel> productReviewModels)
+        {
+            var result = productReviewModels.GroupBy(p => p.ProductId).Select(p => new { ProductId = p.Key, average = p.Average(x => x.Rating) });
+
+            Console.WriteLine("\n| ProductId |\t |  Average  |\n");
+            foreach (var product in result)
+            {
+                Console.WriteLine("\t" + product.ProductId + "\t\t" + product.average);
+            }
+        }
     }
 }

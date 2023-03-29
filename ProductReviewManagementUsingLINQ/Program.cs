@@ -41,15 +41,16 @@
             {
                 Console.Clear();
                 Console.WriteLine("\nWell-Come To PRODUCT MANEGMENT REVIEW Using LINQ\n");
-                Console.WriteLine("1 : Add List");
-                Console.WriteLine("2 : Display List");
-                Console.WriteLine("3 : Retrive Top 3 From List");
-                Console.WriteLine("4 : Retrive Product Rating greater then 3");
-                Console.WriteLine("5 : Retrive Product ID Count");
-                Console.WriteLine("6 : Retrive Only ProductId and Review");
-                Console.WriteLine("7 : Skip Top 5 Records");
-                Console.WriteLine("9 : Retrive is Like TRUE");
-                Console.WriteLine("0 : Exit\n");
+                Console.WriteLine("1  : Add List");
+                Console.WriteLine("2  : Display List");
+                Console.WriteLine("3  : Retrive Top 3 From List");
+                Console.WriteLine("4  : Retrive Product Rating greater then 3");
+                Console.WriteLine("5  : Retrive Product ID Count");
+                Console.WriteLine("6  : Retrive Only ProductId and Review");
+                Console.WriteLine("7  : Skip Top 5 Records");
+                Console.WriteLine("9  : Retrive is Like TRUE");
+                Console.WriteLine("10 : Average Rating Product");
+                Console.WriteLine("0  : Exit\n");
                 Console.Write("\nEnter Option : ");
                 int opt = Convert.ToInt32(Console.ReadLine());
                 switch(opt)
@@ -92,6 +93,11 @@
                         break;
                     case 9:
                         management.RetriveIsLikeTrue(productList);
+                        Console.Write("\nPress any key...");
+                        Console.ReadKey();
+                        break;
+                    case 10:
+                        management.AverageRatingProduct(productList);
                         Console.Write("\nPress any key...");
                         Console.ReadKey();
                         break;
