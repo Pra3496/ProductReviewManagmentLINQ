@@ -102,5 +102,16 @@ namespace ProductReviewManagementUsingLINQ
                 Console.WriteLine("\t" + product.ProductId + "\t\t" + product.UserId + "\t\t" + product.Rating + "\t\t" + product.Review + "\t\t" + product.isLike);
             }
         }
+
+        public void RetriveUserIdDataByRating(List<ProductReviewModel> productReviewModels)
+        {
+            var result = productReviewModels.Where(p => p.UserId == 10).OrderBy(p => p.Rating);
+
+            Console.WriteLine("\n| ProductId |\t |   UserId  |\t  |   Rating  |\t  |   Review  |\t  |   IsLike  |\n");
+            foreach (var product in result)
+            {
+                Console.WriteLine("\t" + product.ProductId + "\t\t" + product.UserId + "\t\t" + product.Rating + "\t\t" + product.Review + "\t\t" + product.isLike);
+            }
+        }
     }
 }
