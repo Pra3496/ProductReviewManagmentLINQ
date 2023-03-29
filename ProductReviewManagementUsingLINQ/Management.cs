@@ -18,9 +18,10 @@ namespace ProductReviewManagementUsingLINQ
 
         public void DisplayProductReviewList(List<ProductReviewModel> productList)
         {
+            Console.WriteLine("\n| ProductId |\t |   UserId  |\t  |   Rating  |\t  |   Review  |\t  |   IsLike  |\n");
             foreach (ProductReviewModel product in productList)
             {
-                Console.WriteLine(product.ProductId + " " + product.UserId + " " + product.Rating + " " + product.Review + " " + product.isLike);
+                Console.WriteLine("\t"+product.ProductId+"\t\t"+product.UserId+"\t\t"+product.Rating+"\t\t" +product.Review+"\t\t" +product.isLike);
             }
         }
 
@@ -39,10 +40,10 @@ namespace ProductReviewManagementUsingLINQ
         public void CountOfReview(List<ProductReviewModel> productReviewModels)
         {
             var groupOfProductId = productReviewModels.GroupBy(p => p.ProductId).Select(p => new { ProductId = p.Key, Count = p.Count() });
-
+            Console.WriteLine("\n| ProductId |\t |    Count  |\n");
             foreach (var product in groupOfProductId)
             {
-                Console.WriteLine("Product id: " + product.ProductId + " count: " + product.Count);
+                Console.WriteLine("\t"+ product.ProductId + "\t\t" + product.Count);
             }
         }
 
@@ -50,10 +51,10 @@ namespace ProductReviewManagementUsingLINQ
         public void RetrivOnlyProductIdAndReview(List<ProductReviewModel> productReviewModels)
         {
             var listOfProductId = productReviewModels.Select(p => new { p.ProductId, p.Review }).ToList();
-
+            Console.WriteLine("\n| ProductId |\t  |   Review  |\n");
             foreach (var product in listOfProductId)
             {
-                Console.WriteLine(" Product id: " + product.ProductId + " : " + product.Review);
+                Console.WriteLine("\t" + product.ProductId + "\t\t" + product.Review);
             }
         }
 
@@ -61,12 +62,24 @@ namespace ProductReviewManagementUsingLINQ
         {
             var result = productReviewModels.Skip(5);
 
+            Console.WriteLine("\n| ProductId |\t |   UserId  |\t  |   Rating  |\t  |   Review  |\t  |   IsLike  |\n");
             foreach (var product in result)
             {
-                Console.WriteLine(" " + product.ProductId + " " + product.UserId + " " + product.Rating + " " + product.Review + " " + product.isLike);
+                Console.WriteLine("\t" + product.ProductId + "\t\t" + product.UserId + "\t\t" + product.Rating + "\t\t" + product.Review + "\t\t" + product.isLike);
             }
         }
 
+        public void RetriveIsLikeTrue(List<ProductReviewModel> productReviewModels)
+        {
+            var result = productReviewModels.Where(p => p.isLike == true);
 
+            Console.WriteLine("\n| ProductId |\t |   UserId  |\t  |   Rating  |\t  |   Review  |\t  |   IsLike  |\n");
+            foreach (var product in result)
+            {
+                Console.WriteLine("\t" + product.ProductId + "\t\t" + product.UserId + "\t\t" + product.Rating + "\t\t" + product.Review + "\t\t" + product.isLike);
+            }
+        }
+
+        
     }
 }
