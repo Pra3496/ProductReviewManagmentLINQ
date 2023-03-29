@@ -42,7 +42,7 @@
             {
                 Console.WriteLine("\nWell-Come To PRODUCT MANEGMENT REVIEW Using LINQ\n");
                 Console.WriteLine("1 : Add List");
-                
+                Console.WriteLine("2 : Display List");
                 Console.WriteLine("0 : Exit\n");
                 Console.Write("\nEnter Option : ");
                 int opt = Convert.ToInt32(Console.ReadLine());
@@ -51,7 +51,10 @@
                     case 1:
                         management.AddProductReview(productList);
                         break;
-                  
+                    case 2:
+                        management.DisplayProductReviewList(productList);
+
+                        break;
                     case 0:
                         flag= false;
                         break;

@@ -16,6 +16,16 @@ namespace ProductReviewManagementUsingLINQ
             Console.WriteLine("\n\tReview is Succesfully Added");
         }
 
-       
+        public void DisplayProductReviewList(List<ProductReviewModel> productList)
+        {
+            foreach (ProductReviewModel product in productList)
+            {
+                Console.WriteLine(product.ProductId + " " + product.UserId + " " + product.Rating + " " + product.Review + " " + product.isLike);
+            }
+        }
+
+
+
+
     }
 }
