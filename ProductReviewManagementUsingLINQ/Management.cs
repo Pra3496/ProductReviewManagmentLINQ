@@ -90,5 +90,17 @@ namespace ProductReviewManagementUsingLINQ
                 Console.WriteLine("\t" + product.ProductId + "\t\t" + product.average);
             }
         }
+
+        
+        public void RetriveNiceMessageRecord(List<ProductReviewModel> productReviewModels)
+        {
+            var result = productReviewModels.Where(p => p.Review == "Nice");
+
+            Console.WriteLine("\n| ProductId |\t |   UserId  |\t  |   Rating  |\t  |   Review  |\t  |   IsLike  |\n");
+            foreach (var product in result)
+            {
+                Console.WriteLine("\t" + product.ProductId + "\t\t" + product.UserId + "\t\t" + product.Rating + "\t\t" + product.Review + "\t\t" + product.isLike);
+            }
+        }
     }
 }
